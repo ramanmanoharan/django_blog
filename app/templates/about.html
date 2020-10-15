@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<br><br>
+<div class="about-section">
+  <h1>About Us Page</h1>
+  <p>Some text about who we are and what we do.</p>
+  <p>Resize the browser window to see that this page is responsive by the way.</p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  {% for team in data %}
+  <div class="column">
+    <div class="card">
+      <img src="/media/{{team.image}}" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2>{{team.title}}</h2>
+        <p class="title">{{team.designiation}}</p>
+        <p>{{team.description}}</p>
+        <p>{{team.email}}</p>
+        <p><a href="tel:{{team.phone}}"><button class="button">Contact</button></a></p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  
+  
+ 
+</div>
+
+{% endblock body %}
